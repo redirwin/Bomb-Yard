@@ -8,12 +8,7 @@ const numOfColumns = 0;
 const difficulty = 0;
 
 $(document).ready(function () {
-  // $(".hamburger").click(function () {
-  //   $(this).toggleClass("is-active");
-  //   $("#menu").slideToggle();
-  //   $(difficultyForm).slideToggle();
-  // });
-  $(".hamburger").tap(function () {
+  $(".hamburger").click(function () {
     $(this).toggleClass("is-active");
     $("#menu").slideToggle();
     $(difficultyForm).slideToggle();
