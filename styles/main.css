@@ -119,14 +119,14 @@ select, button {
   height: 80vh;
   width: 100vw;
   margin-top: 10vh;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .cell {
-  height: 5vh;
-  width: 5vh;
+  height: 3vh;
+  width: 3vh;
   border: 1px solid white;
 }
