@@ -14,6 +14,7 @@ $(document).ready(function () {
     $("#menu").slideToggle();
     $(difficultyForm).slideToggle();
   });
+  
 });
 
 console.log($(window).height());
