@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,27 @@
     <link rel="stylesheet" href="index.css">
     <title>Minesweeper</title>
 </head>
+
 <body>
+    <section id="marquee">
+        <h1>Mobile Mines</h1>
+        <div id="bomb-count">0</div>
+        <div id="timer">00:00</div>
+    </section>
+    <section id="game-grid"></section>
+    <section id="menu">
+        <!-- form with dropdown for difficulty selection -->
+        <form id="difficulty-form">
+            <!-- <label for="difficulty">Difficulty:</label> -->
+            <select name="difficulty" id="difficulty" aria-label="difficulty selection">
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="expert">Expert</option>
+            </select>
+            <button id="new-game">New Game</button>
+        </form>
+    </section>
     <script src="index.js" type="module"></script>
 </body>
+
 </html>
