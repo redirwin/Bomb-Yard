@@ -2,6 +2,7 @@ const hambuger = document.querySelector(".hamburger");
 const menu = document.querySelector("#menu");
 const menuItems = document.querySelectorAll(".menu-item");
 const difficultyForm = document.querySelector("#difficulty-form");
+const newGameBtn = document.querySelector("#new-game-button");
 
 const numOfRows = 0;
 const numOfColumns = 0;
@@ -13,6 +14,10 @@ $(document).ready(function () {
     $("#menu").slideToggle();
     $(difficultyForm).slideToggle();
   });
+});
+
+newGameBtn.addEventListener("click", function (event) { 
+  event.preventDefault();
 });
 
 
