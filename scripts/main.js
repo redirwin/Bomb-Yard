@@ -16,6 +16,8 @@ $(document).ready(function () {
   });
 });
 
+console.log($(window).height());
+
 newGameBtn.addEventListener("click", function (event) { 
   event.preventDefault();
 });
