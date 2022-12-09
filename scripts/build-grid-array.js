@@ -9,15 +9,15 @@ export function buildGridArray(gridSizes) {
                 y: Math.floor(i / gridSizes.columnCount) + 1,
                 isRowEnd: (i + 1) % gridSizes.columnCount === 0,
                 type: "empty",
+                content: "",
                 cleared: false,
                 flagged: false,
+                color: ""
             }
         );
     }
 
-    // gridArray.forEach((cell) => {
-    //     console.log(cell.cellNumber + " (" + cell.x + ", " + cell.y + ")" + " isRowEnd: " + cell.isRowEnd)
-    // })
+    // console.log(gridArray)
 
     return gridArray;
 

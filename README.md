@@ -6,7 +6,7 @@ This app is currently in development, and this readme will be updated when an MV
 
 ## To Do
 
- - [ ] Build bomb placement algorithm
+ - [x] Build mine placement algorithm
  - [ ] Build number placement algorithm
  - [ ] Build clearing algorithm
  - [ ] Build game start behavior
@@ -17,7 +17,7 @@ This app is currently in development, and this readme will be updated when an MV
 	 - [ ] undo
  - [ ] Build user settings functionality
  - [ ] Leaderboard & stats
- - [ ] Clean up UI
+ - [ ] Clean up UI layout & styling
  - [ ] Add additional written content
 	 - [ ] How to play
 	 - [ ] About
