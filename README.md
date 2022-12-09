@@ -1,3 +1,5 @@
+# Mobile Mines
+
 A browser-based Minesweeper-like game that is geared specifically toward mobile devices, although it can also be played on larger screens.
 
 This app is currently in development, and this readme will be updated when an MVP has been reached.
