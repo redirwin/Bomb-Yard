@@ -4,7 +4,7 @@ export function buildGameGrid(gridArray, gridDefinition, cellSize) {
 
     let content = "";
 
-    gridArray.forEach((cell, index) => {
+    gridArray.forEach((cell) => {
         content += `
             <span class="cell" id="${cell.uid}">${cell.content}</span> 
         `

@@ -16,7 +16,7 @@ export function gridSettings(cellPixels) {
     cellCount: cellCount,
   }
 
-  console.log('gridDefinition: ', gridDefinition)
+  // console.log('gridDefinition: ', gridDefinition)
 
   return (gridDefinition);
 }

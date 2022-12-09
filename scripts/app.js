@@ -44,9 +44,25 @@ newGameBtn.addEventListener("click", function (event) {
   setTimeout(() => {
     difficulty();
     placeMines(gridArray, difficulty());
-    placeNumbers(gridArray);
+    placeNumbers(gridArray, gridDefinition);
     buildGameGrid(gridArray, gridDefinition, userSettings.cellPixelSize);
-  }, 1500);
+
+
+    cellHover(); // HOVER FOR DEV PURPOSES
+  }, 0);
 });
 
 // End New Game Button ---------------------------
+
+// HOVER FOR DEV PURPOSES ---------------------------
+function cellHover() {
+  const cells = document.querySelectorAll(".cell");
+  cells.forEach((cell) => {
+    cell.addEventListener("mouseover", function (event) {
+      event.preventDefault();
+      console.log(gridArray[cell.id - 1].content);
+    });
+  });
+}
+
+// End Hover for Dev Purposes ---------------------------

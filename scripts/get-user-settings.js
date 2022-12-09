@@ -28,6 +28,6 @@ function difficulty() {
 
 }
 
-console.log('userSettings: ', userSettings)
+// console.log('userSettings: ', userSettings)
 
 export { userSettings, difficulty };
