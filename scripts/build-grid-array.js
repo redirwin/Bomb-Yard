@@ -4,16 +4,22 @@ export function buildGridArray(gridSizes) {
     for (let i = 0; i < gridSizes.cellCount; i++) {
         gridArray.push(
             {
-                cellNumber: i + 1,
+                uid: i + 1,
                 x: i % gridSizes.columnCount + 1,
                 y: Math.floor(i / gridSizes.columnCount) + 1,
+                isRowEnd: (i + 1) % gridSizes.columnCount === 0,
+                type: "empty",
+                cleared: false,
+                flagged: false,
             }
         );
     }
 
-    gridArray.forEach((cell) => {
-        console.log(cell.cellNumber + " (" + cell.x + ", " + cell.y + ")")
-    })
+    // gridArray.forEach((cell) => {
+    //     console.log(cell.cellNumber + " (" + cell.x + ", " + cell.y + ")" + " isRowEnd: " + cell.isRowEnd)
+    // })
+
+    return gridArray;
 
 }
 

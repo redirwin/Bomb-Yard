@@ -1,3 +1,33 @@
+:root {  
+
+  /* COLOR PALETTE
+
+      #f4f4f4 - white
+      #000000 - black
+      #333333 - dark grey
+      #1E5128 - green
+      #D8E9A8 - light green
+      #6E5341 - brown
+      #136d15 - dark grass green
+      #138510 - lighter grass green
+      #41980a - lightest grass green
+  
+  */
+
+  --body-background: #f4f4f4;
+  --body-text: #000000;
+  --aside-text: #f4f4f4;
+  --aside-background: #000000;
+
+  --cell-background: #C0C0C0;
+  --cell-background-hover: #D8E9A8;
+  --cell-all-borders: #f4f4f4;
+  --cell-br-borders: #7B7B7B;
+  --cell-tl-borders: #ffffff;
+  --cell-dirt: #6E5341;
+  
+}
+
 *,
 *:before,
 *:after {
@@ -14,8 +44,18 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  background-color: #333;
-  color: #f4f4f4;
+  color: var(--body-text);
+  background: var(--body-background);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+body, #marquee-container, #footer-container {
+  max-width: 1024px;
 }
 
 #hamburger,
@@ -25,10 +65,11 @@ button {
 }
 
 #marquee,
-#footer {
+footer {
   position: fixed;
   width: 100vw;
-  background: #000;
+  background: var(--aside-background);
+  color: var(--aside-text);
   z-index: 9999;
   display: flex;
   padding: 0 1.5rem;
@@ -42,11 +83,36 @@ button {
   justify-content: space-between;
 }
 
-#marquee h1 {
-  width: 50%;
+footer {
+  bottom: 0;
+  left: 0;
+  height: 10vh;
+  align-items: center;
+  justify-content: space-between;
 }
 
-#marquee span {
+#marquee-container, #footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
+}
+
+#marquee h1 {
+  width: 50%;
+  line-height: 1.5rem;
+}
+
+#top-stats {
+  width: 30%;
+  max-width: 200px;
+  min-width: 125px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#top-stats span {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,7 +144,7 @@ button {
   bottom: 10vh;
   left: 0;
   width: 100vw;
-  background: #000;
+  background: var(--aside-background);
   z-index: 9999;
   display: flex;
   flex-direction: column;
@@ -88,7 +154,7 @@ button {
 }
 
 #menu a {
-  color: #f4f4f4;
+  color: var(--aside-text);
   text-decoration: none;
   font-size: 1.25rem;
   padding: 1rem 1.5rem;
@@ -116,27 +182,53 @@ select, button {
 /* GAME GRID STYLES */
 
 #game-grid {
-  height: 80vh;
   width: 100vw;
-  margin-top: 10vh;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
 .cell {
-  height: 39px;
-  width: 39px;
-  border: 1px solid white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+  padding: 0;
+  margin: 0;
+  transition: all .2;
+  border-top: 1px solid var(--cell-tl-borders);
+  border-left: 1px solid var(--cell-tl-borders);
+  border-right: 2px solid var(--cell-br-borders);
+  border-bottom: 2px solid var(--cell-br-borders);
+  background-color: var(--cell-background);
+}
+
+.cell.brown {
+  background: var(--cell-dirt);
+}
+
+.cell.clicked {
+  background: var(--cell-dirt);
+}
+
+#orientation-warning {
+  display: none;
 }
 
 
-@media only screen and (orientation: landscape) {
+@media only screen and (orientation: landscape) and (max-width: 1280px) {
   #orientation-required {
     display: none;
   }
 
   #orientation-warning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: var(--aside-text);
+    background-color: var(--aside-background);
+    z-index: 10000;
     height: 100vh;
     width: 100vw;
     display: flex;
