@@ -4,6 +4,8 @@ A browser-based Minesweeper-like game that is geared specifically toward mobile 
 
 This app is currently in development, and this readme will be updated when an MVP has been reached.
 
+Application is live [at this url](https://mobile-mines.netlify.app), and updates as app is being developed.
+
 ## To Do
 
  - [x] Build mine placement algorithm
