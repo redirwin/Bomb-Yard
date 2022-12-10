@@ -17,8 +17,17 @@ Application is live [at this url](https://mobile-mines.netlify.app), and updates
 	 - [ ] pause
 	 - [ ] end
 	 - [ ] undo
+ - [ ] Cleanup
+         - [ ] refactor code
+         - [ ] cleanup & standardize naming
+         - [ ] remove unneeded commenting
+         - [ ] prettify files 
+         - [ ] empty trash
  - [ ] Build user settings functionality
+         - [ ] cookie storage
  - [ ] Leaderboard & stats
+         - [ ] back-end storage
+         - [ ] user accounts
  - [ ] Clean up UI layout & styling
  - [ ] Add additional written content
 	 - [ ] How to play
