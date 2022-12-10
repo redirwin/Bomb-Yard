@@ -1,4 +1,6 @@
-export function buildGameGrid(gridArray, gridDefinition, cellSize) {
+import { handleCellClicks } from "./handle-cell-clicks.js";
+
+export function buildGame(gridArray, cellSize) {
   
     const gameGrid = document.querySelector("#game-grid");
 
@@ -23,6 +25,10 @@ export function buildGameGrid(gridArray, gridDefinition, cellSize) {
     cells.forEach((cell) => {
         cell.style.width = cellSize + "px";
         cell.style.height = cellSize + "px";
+        cell.addEventListener("click", function (event) {
+            event.preventDefault();
+            handleCellClicks(event, gridArray);
+        })
     })
 
     return;

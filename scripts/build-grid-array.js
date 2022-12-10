@@ -1,16 +1,17 @@
-export function buildGridArray(gridSizes) {
-    let gridArray = []
+export function buildGridArray(gridDefinition, gridArray) {
+    // clear gridArray
+    gridArray.length = 0;
 
-    for (let i = 0; i < gridSizes.cellCount; i++) {
+    for (let i = 0; i < gridDefinition.cellCount; i++) {
         gridArray.push(
             {
                 uid: i + 1,
-                x: i % gridSizes.columnCount + 1,
-                y: Math.floor(i / gridSizes.columnCount) + 1,
+                x: i % gridDefinition.columnCount + 1,
+                y: Math.floor(i / gridDefinition.columnCount) + 1,
                 type: "empty", // empty, mine, number, 
                 content: "",
                 state: "hidden", // hidden, revealed, flagged, exploded
-                color: "",
+                hasEmptyNeighbor: false,
             }
         );
     }
@@ -19,17 +20,15 @@ export function buildGridArray(gridSizes) {
     gridArray.forEach((cell) => {
         cell.isEdgePiece = {
             left: cell.x === 1,
-            right: cell.x === gridSizes.columnCount,
+            right: cell.x === gridDefinition.columnCount,
             top: cell.y === 1,
-            bottom: cell.y=== gridSizes.rowCount,
+            bottom: cell.y=== gridDefinition.rowCount,
             topLeftCorner: cell.x === 1 && cell.y === 1,
-            topRightCorner: cell.x === gridSizes.columnCount && cell.y === 1,
-            bottomLeftCorner: cell.y === gridSizes.rowCount && cell.x === 1,
-            bottomRightCorner: cell.y === gridSizes.rowCount && cell.x === gridSizes.columnCount,
+            topRightCorner: cell.x === gridDefinition.columnCount && cell.y === 1,
+            bottomLeftCorner: cell.y === gridDefinition.rowCount && cell.x === 1,
+            bottomRightCorner: cell.y === gridDefinition.rowCount && cell.x === gridDefinition.columnCount,
         }
     })
-
-    // console.log(gridArray)
 
     return gridArray;
 

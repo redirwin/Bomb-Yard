@@ -1,10 +1,9 @@
-import { gridSettings } from "./get-grid-settings.js";
+import { gameBoardSizes } from "./get-game-board-sizes.js";
 import { buildGridArray } from "./build-grid-array.js";
 import { userSettings, difficulty } from "./get-user-settings.js";
-import { buildGameGrid } from "./build-game-grid.js";
+import { buildGame } from "./build-game.js";
 import { placeMines } from "./place-mines.js";
 import { placeNumbers } from "./place-numbers.js";
-
 
 // EVENTS ---------------------------
 
@@ -28,41 +27,41 @@ $(document).ready(function () {
 // NEW GAME BUTTON ---------------------------
 
 const newGameBtn = document.querySelector("#new-game-button");
-const gridDefinition = gridSettings(userSettings.cellPixelSize);
-const gridArray = buildGridArray(gridDefinition);
-const gameGrid = document.querySelector("#game-grid");
+const gridDefinition = gameBoardSizes(userSettings.cellPixelSize);
+const gridArray = []
+const gameBoard = document.querySelector("#game-grid");
 
 newGameBtn.addEventListener("click", function (event) {
   event.preventDefault();
 
-  gameGrid.innerHTML = `
+  gameBoard.innerHTML = `
     <div class="loading">
       <p>Rendering Game</p>
       <img src="/assets/loading.svg" alt="rendering game">
     </div>
     `;
   setTimeout(() => {
+    buildGridArray(gridDefinition, gridArray)
     difficulty();
     placeMines(gridArray, difficulty());
     placeNumbers(gridArray, gridDefinition);
-    buildGameGrid(gridArray, gridDefinition, userSettings.cellPixelSize);
-
-
-    cellHover(); // HOVER FOR DEV PURPOSES
+    buildGame(gridArray, userSettings.cellPixelSize);
   }, 0);
 });
 
 // End New Game Button ---------------------------
 
-// HOVER FOR DEV PURPOSES ---------------------------
-function cellHover() {
-  const cells = document.querySelectorAll(".cell");
-  cells.forEach((cell) => {
-    cell.addEventListener("mouseover", function (event) {
-      event.preventDefault();
-      console.log(gridArray[cell.id - 1].content);
-    });
-  });
-}
+// HANDLE CELL CLICKS ---------------------------
 
-// End Hover for Dev Purposes ---------------------------
+const cells = document.querySelectorAll(".cell");
+
+cells.forEach((cell) => {
+
+  cell.addEventListener("click", function (event) {
+    event.preventDefault();
+    handleCellClicks(event);
+  })
+
+})
+
+// End Handle Cell Click ---------------------------

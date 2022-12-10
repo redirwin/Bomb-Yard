@@ -1,4 +1,4 @@
-export function gridSettings(cellPixels) {
+export function gameBoardSizes(cellPixels) {
 
   // const gridWidth = parseFloat(window.innerWidth);
   // const gridHeight = parseFloat(window.innerHeight) * 0.8;

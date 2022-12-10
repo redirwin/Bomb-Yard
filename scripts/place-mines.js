@@ -6,6 +6,7 @@ export function placeMines(gridArray, difficulty) {
 
   mineCounter.innerHTML = mineCount;
 
+  
   gridArray.forEach((cell) => {
     if (cell.type === "mine") {
       cell.type = "empty";
@@ -23,7 +24,9 @@ while (mineCount > 0) {
   }
 
     gridArray.forEach((cell, index) => {
-        cell.type === "mine" && (cell.content = "💣")
+        if (cell.type === "mine") {
+            cell.content = "💣";
+        }
     })
 
 }

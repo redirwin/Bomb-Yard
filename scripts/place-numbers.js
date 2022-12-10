@@ -65,6 +65,6 @@ export function placeNumbers(gridArray, gridDefinition) {
  
     });
 
-    console.log(gridArray[0])
+    // console.log(gridArray[0])
 
 }
