@@ -1,4 +1,4 @@
-export function revealEmptyCells(gridArray, clickedCellId, gridDefinition) {
+export function revealEmpties(gridArray, clickedCellId, gridDefinition) {
 
     const columnCount = gridDefinition.columnCount;
  
@@ -12,7 +12,7 @@ export function revealEmptyCells(gridArray, clickedCellId, gridDefinition) {
     while(unrevealedEmptyNeighbors.length) { 
         unrevealedEmptyNeighbors.forEach((cell) => {
             cell.state = "revealed"
-            document.getElementById(cell.uid).classList.add("cleared", "empty")
+            document.getElementById(cell.uid).classList.add("revealed")
             collectAll.push(cell)            
         })
         unrevealedEmptyNeighbors.length = 0

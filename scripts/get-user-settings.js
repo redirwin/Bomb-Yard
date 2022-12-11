@@ -9,7 +9,7 @@ userSettings.difficulty = difficulty();
 
 function cellPixelSize() {   
     const cellPixelsArray = [35, 40, 45];
-    return 40;
+    return 35;
 
 }
 

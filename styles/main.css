@@ -244,7 +244,11 @@ button#new-game-button {
   /* transition: background-color 1; */
 }
 
-.cell.empty.cleared {
+.cell:hover, cursor {
+  cursor: crosshair;
+}
+
+.cell.empty.revealed {
   background-color: var(--cell-dirt);
   border: none;
   transition: background-color 0.25s ease;
@@ -255,6 +259,16 @@ button#new-game-button {
 }
 
 #orientation-warning {
+  display: none;
+}
+
+#grid-cover {
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  width: 100vw;
+  height: 80vh;
+  z-index: 9999;
   display: none;
 }
 

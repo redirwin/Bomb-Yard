@@ -6,7 +6,7 @@ export function placeMines(gridArray, difficulty) {
 
   mineCounter.innerHTML = mineCount;
 
-  
+  // reset mines for each game
   gridArray.forEach((cell) => {
     if (cell.type === "mine") {
       cell.type = "empty";

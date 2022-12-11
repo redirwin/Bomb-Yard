@@ -12,7 +12,8 @@ Application is live [at this url](https://mobile-mines.netlify.app), and updates
 - [x] Build number placement algorithm
 - [x] Build clearing algorithm
 - [ ] Build game start behavior
-	- [ ] populate board
+	- [x] populate board
+	- [ ] 
 	- [ ] timer
 	- [ ] pause
 	- [ ] end
@@ -20,7 +21,9 @@ Application is live [at this url](https://mobile-mines.netlify.app), and updates
 - [ ] Cleanup
 	- [ ] refactor code
 	- [ ] cleanup & standardize naming
-	- [ ] remove unneeded commenting
+	- [ ] remove unneeded console logs
+	- [ ] remove unneeded comments
+	- [ ] make helpful comments
 	- [ ] prettify files
 	- [ ] empty trash
 - [ ] Build user settings functionality
