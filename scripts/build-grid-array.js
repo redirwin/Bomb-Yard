@@ -29,7 +29,7 @@ export function buildGridArray(gridDefinition, gridArray) {
         }
     })
 
-    console.log(gridArray)
+    // console.log(gridArray)
     return gridArray;
 
 }

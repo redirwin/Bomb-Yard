@@ -18,6 +18,9 @@ $(document).ready(function () {
     $(this).toggleClass("is-active");
     $(menu).slideToggle();
     $(difficultyForm).slideToggle();
+    setTimeout(() => {
+      $("body").animate({ scrollTop: jQuery(window).height()})
+    }, 5000)
   });
 
 });
