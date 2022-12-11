@@ -241,7 +241,6 @@ button#new-game-button {
   border-right: 2px solid var(--cell-br-borders);
   border-bottom: 2px solid var(--cell-br-borders);
   background-color: var(--cell-background);
-  /* transition: background-color 1; */
 }
 
 .cell:hover, cursor {
@@ -254,8 +253,17 @@ button#new-game-button {
   transition: background-color 0.25s ease;
 }
 
-.cell.clicked {
-  background: var(--cell-dirt);
+.cell.mine.exploded {
+  /* background-color: var(--body-background); */
+  border: none;
+  transition: background-color 0.25s ease;
+}
+
+.cell.flagged {
+  background: url(../assets/cone.png) no-repeat center center;
+  background-size: 60%;
+  border: none;
+  transition: background-color 0.25s ease;
 }
 
 #orientation-warning {

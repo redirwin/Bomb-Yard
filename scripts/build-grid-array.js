@@ -9,6 +9,7 @@ export function buildGridArray(gridDefinition, gridArray) {
                 state: "hidden", // hidden, revealed, flagged, exploded
                 content: "",
                 verifiedAdjacentEmpty: false,
+                flagged: false,
                 
                 uid: i + 1,
                 x: i % gridDefinition.columnCount + 1,

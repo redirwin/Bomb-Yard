@@ -51,8 +51,6 @@ newGameBtn.addEventListener("click", function (event) {
     placeNumbers(gridArray, gridDefinition);
     placeEmpties(gridArray);
 
-    // console.log(gridArray)
-
     buildGame(gridArray, userSettings.cellPixelSize, gridDefinition);
   }, 0);
 });

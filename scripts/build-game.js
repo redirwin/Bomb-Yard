@@ -38,6 +38,11 @@ export function buildGame(gridArray, cellSize, gridDefinition) {
             handleCellClicks(event, gridArray, gridDefinition);
         })
 
+        cell.addEventListener("contextmenu", function (event) {
+            event.preventDefault();
+            handleCellClicks(event, gridArray, gridDefinition);
+        })
+
         // HELPS WITH DEBUGGING
         // cell.addEventListener("mouseover", () => {
         //     console.log(cell.id)
