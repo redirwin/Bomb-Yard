@@ -1,8 +1,12 @@
+import { revealNumbersAdjacentEmpties } from "./reveal-numbers-adjacent-empties.js"
+
 export function revealEmpties(gridArray, clickedCellId, gridDefinition) {
 
     const columnCount = gridDefinition.columnCount;
  
     const collectAll = []
+
+    const justTheAdjacentNumbers = []
 
     const unrevealedEmptyNeighbors = [
         gridArray[clickedCellId - 1],
@@ -80,6 +84,7 @@ export function revealEmpties(gridArray, clickedCellId, gridDefinition) {
 
         // helper function to check if cell is empty and not revealed
         function isEmptyAndNotRevealed(cell) {
+            cell.type === "number" && justTheAdjacentNumbers.push(cell)
             return (cell.type === "empty" && cell.state != "revealed")
         }
 
@@ -87,7 +92,7 @@ export function revealEmpties(gridArray, clickedCellId, gridDefinition) {
 
     }
 
-
+    revealNumbersAdjacentEmpties([...new Set(justTheAdjacentNumbers)], gridArray)    
 
 }
 

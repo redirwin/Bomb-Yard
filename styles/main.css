@@ -46,7 +46,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: var(--body-text);
-  background: var(--body-background);
+  background: var(--cell-background);
   height: 100vh;
   width: 100vw;
   display: flex;

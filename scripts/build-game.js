@@ -12,13 +12,13 @@ export function buildGame(gridArray, cellSize, gridDefinition) {
         
         // in production if cell is not cleared, no content should show except flags (if flagged)
 
-        content += `
-            <span class="cell" id="${cell.uid}">${cell.content}</span> 
-        `
-
         // content += `
-        //     <span class="cell" id="${cell.uid}"></span> 
+        //     <span class="cell" id="${cell.uid}">${cell.content}</span> 
         // `
+
+        content += `
+            <span class="cell" id="${cell.uid}"></span> 
+        `
 
       if (cell.isRowEnd) {
             content += `<br/>`

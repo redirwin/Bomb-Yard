@@ -10,7 +10,7 @@ export function handleCellClicks(event, gridArray, gridDefinition) {
 
     if(gridArray[clickedCellId - 1].type === "empty") {
         revealEmpties(gridArray, clickedCellId, gridDefinition)
-        revealNumbersAdjacentEmpties(gridArray, clickedCellId, gridDefinition)
+        // revealNumbersAdjacentEmpties(gridArray, clickedCellId, gridDefinition)
         reRenderBoard(gridArray)
         return
     }
