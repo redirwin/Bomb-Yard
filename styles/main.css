@@ -210,10 +210,13 @@ select, button {
   border-right: 2px solid var(--cell-br-borders);
   border-bottom: 2px solid var(--cell-br-borders);
   background-color: var(--cell-background);
+  /* transition: background-color 1; */
 }
 
 .cell.brown {
-  background: var(--cell-dirt);
+  background-color: var(--cell-dirt);
+  border: none;
+  transition: background-color 0.25s ease;
 }
 
 .cell.clicked {

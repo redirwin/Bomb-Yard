@@ -1,6 +1,6 @@
 import { handleCellClicks } from "./handle-cell-clicks.js";
 
-export function buildGame(gridArray, cellSize) {
+export function buildGame(gridArray, cellSize, gridDefinition) {
   
     const gameGrid = document.querySelector("#game-grid");
 
@@ -27,8 +27,14 @@ export function buildGame(gridArray, cellSize) {
         cell.style.height = cellSize + "px";
         cell.addEventListener("click", function (event) {
             event.preventDefault();
-            handleCellClicks(event, gridArray);
+            handleCellClicks(event, gridArray, gridDefinition);
         })
+
+        // HELPS WITH DEBUGGING
+        // cell.addEventListener("mouseover", () => {
+        //     console.log(cell.id)
+        // })
+        
     })
 
     return;

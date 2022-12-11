@@ -1,6 +1,8 @@
-export function handleCellClicks(event, gridArray) {
-    const targetGridIndex = event.target.id - 1
+import { revealEmptyCells } from "./reveal-empty-cells.js"
+
+export function handleCellClicks(event, gridArray, gridDefinition) {
+    const clickedCellId = event.target.id
 
 
-    gridArray[targetGridIndex].type === "empty" && revealEmptyCells(targetGridIndex, gridArray)
+    gridArray[clickedCellId - 1].type === "empty" && revealEmptyCells(gridArray, clickedCellId, gridDefinition)
 }

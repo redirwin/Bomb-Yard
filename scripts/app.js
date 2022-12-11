@@ -45,7 +45,7 @@ newGameBtn.addEventListener("click", function (event) {
     difficulty();
     placeMines(gridArray, difficulty());
     placeNumbers(gridArray, gridDefinition);
-    buildGame(gridArray, userSettings.cellPixelSize);
+    buildGame(gridArray, userSettings.cellPixelSize, gridDefinition);
   }, 0);
 });
 

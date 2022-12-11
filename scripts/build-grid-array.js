@@ -11,7 +11,6 @@ export function buildGridArray(gridDefinition, gridArray) {
                 type: "empty", // empty, mine, number, 
                 content: "",
                 state: "hidden", // hidden, revealed, flagged, exploded
-                hasEmptyNeighbor: false,
             }
         );
     }

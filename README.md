@@ -10,7 +10,7 @@ Application is live [at this url](https://mobile-mines.netlify.app), and updates
 
 - [x] Build mine placement algorithm
 - [x] Build number placement algorithm
-- [ ] Build clearing algorithm
+- [x] Build clearing algorithm
 - [ ] Build game start behavior
 	- [ ] populate board
 	- [ ] timer
