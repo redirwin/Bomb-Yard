@@ -229,10 +229,6 @@ select, button {
 
 
 @media only screen and (orientation: landscape) and (max-width: 1280px) {
-  #orientation-required {
-    display: none;
-  }
-
   #orientation-warning {
     position: fixed;
     top: 0;

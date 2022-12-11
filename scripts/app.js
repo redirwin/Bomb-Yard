@@ -65,5 +65,3 @@ cells.forEach((cell) => {
 })
 
 // End Handle Cell Click ---------------------------
-
-console.log(gridArray)
