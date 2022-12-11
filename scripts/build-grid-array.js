@@ -5,9 +5,10 @@ export function buildGridArray(gridDefinition, gridArray) {
     for (let i = 0; i < gridDefinition.cellCount; i++) {
         gridArray.push(
             {
-                type: "empty", // empty, mine, number, 
+                type: "", // empty, mine, number, 
                 state: "hidden", // hidden, revealed, flagged, exploded
                 content: "",
+                verifiedAdjacentEmpty: false,
                 
                 uid: i + 1,
                 x: i % gridDefinition.columnCount + 1,

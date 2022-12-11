@@ -4,6 +4,7 @@ import { userSettings, difficulty } from "./get-user-settings.js";
 import { buildGame } from "./build-game.js";
 import { placeMines } from "./place-mines.js";
 import { placeNumbers } from "./place-numbers.js";
+import { placeEmpties } from "./place-empties.js";
 
 // EVENTS ---------------------------
 
@@ -41,10 +42,17 @@ newGameBtn.addEventListener("click", function (event) {
     </div>
     `;
   setTimeout(() => {
-    buildGridArray(gridDefinition, gridArray)
+    gridArray.length = 0;
     difficulty();
+    buildGridArray(gridDefinition, gridArray)
+
+
     placeMines(gridArray, difficulty());
     placeNumbers(gridArray, gridDefinition);
+    placeEmpties(gridArray);
+
+    // console.log(gridArray)
+
     buildGame(gridArray, userSettings.cellPixelSize, gridDefinition);
   }, 0);
 });

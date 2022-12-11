@@ -1,4 +1,6 @@
 import { revealNumbersAdjacentEmpties } from "./reveal-numbers-adjacent-empties.js"
+import { updateBoard } from "./update-board.js"
+
 
 export function revealEmpties(gridArray, clickedCellId, gridDefinition) {
 
@@ -8,15 +10,15 @@ export function revealEmpties(gridArray, clickedCellId, gridDefinition) {
 
     const justTheAdjacentNumbers = []
 
-    const unrevealedEmptyNeighbors = [
-        gridArray[clickedCellId - 1],
+    const unrevealedEmptyNeighbors = [              
+        gridArray[clickedCellId - 1], // start with the clicked cell
         ...getUnrevealedAndEmptyNeighbors(clickedCellId - 1)
     ]
 
     while(unrevealedEmptyNeighbors.length) { 
         unrevealedEmptyNeighbors.forEach((cell) => {
             cell.state = "revealed"
-            document.getElementById(cell.uid).classList.add("revealed")
+            // document.getElementById(cell.uid).classList.add("revealed")
             collectAll.push(cell)            
         })
         unrevealedEmptyNeighbors.length = 0
@@ -26,6 +28,12 @@ export function revealEmpties(gridArray, clickedCellId, gridDefinition) {
             } 
         })
     }
+
+    // updateBoard(gridArray, collectAll)
+
+    // console.log("after revealing empties: ", gridArray)
+
+    updateBoard(gridArray, "empty cell click")
  
     function getUnrevealedAndEmptyNeighbors(index) {
 
@@ -84,15 +92,25 @@ export function revealEmpties(gridArray, clickedCellId, gridDefinition) {
 
         // helper function to check if cell is empty and not revealed
         function isEmptyAndNotRevealed(cell) {
-            cell.type === "number" && justTheAdjacentNumbers.push(cell)
-            return (cell.type === "empty" && cell.state != "revealed")
+            
+            // cell.type === "number" && justTheAdjacentNumbers.push(cell)
+
+            if (cell.type === "number" ) {
+                cell.verifiedAdjacentEmpty = true
+                justTheAdjacentNumbers.push(cell)
+            }
+            
+            if (cell.type !== "number"){
+                return (cell.type === "empty" && cell.state != "revealed")
+            
+            }      
         }
 
         return unrevealedEmptyNeighbors;
 
     }
 
-    revealNumbersAdjacentEmpties([...new Set(justTheAdjacentNumbers)], gridArray)    
+    // revealNumbersAdjacentEmpties([...new Set(justTheAdjacentNumbers)], gridArray)    
 
 }
 

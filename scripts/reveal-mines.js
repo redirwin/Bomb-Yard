@@ -1,4 +1,4 @@
-import { reRenderBoard } from "./re-render-board.js"
+import { updateBoard } from "./update-board.js"
 
 export function revealMines(gridArray, clickedCellId) {
     gridArray.forEach(cell => {
@@ -9,7 +9,7 @@ export function revealMines(gridArray, clickedCellId) {
     gridArray[clickedCellId - 1].state = "exploded"
     gridArray[clickedCellId - 1].content = "💥"
     
-    reRenderBoard(gridArray)
+    updateBoard(gridArray, "mine click")
 
 
 }

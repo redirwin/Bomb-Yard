@@ -6,27 +6,27 @@ export function buildGame(gridArray, cellSize, gridDefinition) {
     const gridCover = document.querySelector("#grid-cover");
     gridCover.style.display = "none";
 
-    let content = "";
+    let boardContent = "";
 
     gridArray.forEach((cell) => {
         
         // in production if cell is not cleared, no content should show except flags (if flagged)
 
-        // content += `
+        // boardContent += `
         //     <span class="cell" id="${cell.uid}">${cell.content}</span> 
         // `
 
-        content += `
+        boardContent += `
             <span class="cell" id="${cell.uid}"></span> 
         `
 
       if (cell.isRowEnd) {
-            content += `<br/>`
+            boardContent += `<br/>`
         }
 
     })
 
-    gameGrid.innerHTML = content;
+    gameGrid.innerHTML = boardContent;
 
     const cells = document.querySelectorAll(".cell");
 

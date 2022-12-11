@@ -58,9 +58,10 @@ export function placeNumbers(gridArray, gridDefinition) {
             }            
             
             if (adjacentMines) {
-                cell.content = adjacentMines;
                 cell.type = "number";
-            } else cell.content = "";
+                cell.content = adjacentMines;
+            } 
+            // else cell.content = "";
         }
  
     });
