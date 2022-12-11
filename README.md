@@ -13,6 +13,8 @@ Application is live [at this url](https://mobile-mines.netlify.app), and updates
 - [x] Build clearing algorithm
 - [ ] Build game start behavior
 	- [x] populate board
+	- [x] basic behaviors based on rules
+	- [ ] 'flag' behavior
 	- [ ] timer
 	- [ ] pause
 	- [ ] end
