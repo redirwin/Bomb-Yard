@@ -12,7 +12,7 @@ export function revealEmptyCells(gridArray, clickedCellId, gridDefinition) {
     while(unrevealedEmptyNeighbors.length) { 
         unrevealedEmptyNeighbors.forEach((cell) => {
             cell.state = "revealed"
-            document.getElementById(cell.uid).classList.add("brown")
+            document.getElementById(cell.uid).classList.add("cleared", "empty")
             collectAll.push(cell)            
         })
         unrevealedEmptyNeighbors.length = 0
