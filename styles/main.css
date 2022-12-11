@@ -1,4 +1,4 @@
-:root {  
+:root {
 
   /* COLOR PALETTE
 
@@ -26,7 +26,7 @@
   --cell-br-borders: #7B7B7B;
   --cell-tl-borders: #ffffff;
   --cell-dirt: #6E5341;
-  
+
 }
 
 *,
@@ -55,7 +55,9 @@ body {
   margin: 0 auto;
 }
 
-body, #marquee-container, #footer-container {
+body,
+#marquee-container,
+#footer-container {
   max-width: 768px;
   /* min-width: 320px; */
 }
@@ -91,14 +93,15 @@ footer {
   left: 0;
 }
 
-#marquee-container, #footer-container {
+#marquee-container,
+#footer-container {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
   width: 100%;
-  max-width: 320px;
+  min-width: 300px;
 }
 
 #marquee h1 {
@@ -124,12 +127,16 @@ footer {
   padding: 0;
 }
 
-.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
   background-color: #f4f4f4;
   margin-top: 0;
 }
 
-.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::before, .hamburger.is-active .hamburger-inner::after {
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
   background-color: #f4f4f4;
 }
 
@@ -157,34 +164,51 @@ footer {
   transition: all 0.3s ease;
 }
 
-#menu a:hover, #menu a:focus, #menu a:active {
+#menu a:hover,
+#menu a:focus,
+#menu a:active {
   background: #f4f4f4;
   color: #000;
   height: 75%;
 }
 
+#undo-button {
+  font-size: 1.75rem;
+}
+
 form#difficulty-form {
   display: flex;
   flex-wrap: nowrap;
+  margin-right: 60px;
+
 }
 
-select, button {
+select#difficulty,
+button#new-game-button {
   background: #f4f4f4;
   color: #000;
-  padding: 0.5rem 1rem;
   border: none;
-  border-radius: 0.25rem;
-  margin: 0 0.25rem;
-  height: 4.5vh;
-  min-height: 35px;
-}
-
-select {
-  max-width: 110px;
-}
-
-button {
+  height: 10vh;
+  min-height: 70px;
   width: 100px;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+select#difficulty {
+  width: 150px;
+  padding: 1rem .75rem;
+  margin-right: 1rem;
+  border-right: 1px solid #000;
+  /* border-radius: 0.25rem; */
+}
+
+button#new-game-button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+
 }
 
 /* GAME GRID STYLES */
