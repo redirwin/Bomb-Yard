@@ -5,6 +5,7 @@ import { buildGame } from "./build-game.js";
 import { placeMines } from "./place-mines.js";
 import { placeNumbers } from "./place-numbers.js";
 import { placeEmpties } from "./place-empties.js";
+import { timer } from "./timer.js";
 
 // EVENTS ---------------------------
 
@@ -33,7 +34,8 @@ const gridArray = []
 const gameBoard = document.querySelector("#game-grid");
 
 newGameBtn.addEventListener("click", function (event) {
-  event.preventDefault();
+
+event.preventDefault();
 
   gameBoard.innerHTML = `
     <div class="loading">

@@ -1,5 +1,3 @@
-import { gameOver } from "./game-over.js";
-
 export function updateBoard(gridArray, reason) {
 
     const cells = document.querySelectorAll(".cell");
@@ -26,14 +24,13 @@ export function updateBoard(gridArray, reason) {
             if (reason === "mine click" && gridArray[cell.id - 1].type === "mine") {
                 cell.innerHTML = gridArray[cell.id - 1].content;
                 cell.classList.add(gridArray[cell.id - 1].type, gridArray[cell.id - 1].state)                
-                gameOver()
             }
 
 
         // if reason is number click, AND if matching array spot type is number AND state is revealed
             if (reason === "number click" && gridArray[cell.id - 1].type === "number" && gridArray[cell.id - 1].state === "revealed") {
                 cell.innerHTML = gridArray[cell.id - 1].content;
-                cell.classList.add(gridArray[cell.id - 1].type, gridArray[cell.id - 1].state)                
+                cell.classList.add(gridArray[cell.id - 1].type, gridArray[cell.id - 1].state, "no-borders")                
             }
 
     })

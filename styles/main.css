@@ -26,6 +26,8 @@
   --cell-br-borders: #7B7B7B;
   --cell-tl-borders: #ffffff;
   --cell-dirt: #6E5341;
+  --cell-number-revealed-background: #807676;
+  --cell-number-revealed-text: #f4f4f4;
 
 }
 
@@ -264,6 +266,17 @@ button#new-game-button {
   background-size: 60%;
   border: none;
   transition: background-color 0.25s ease;
+}
+
+.cell.number.revealed {
+  /* border: 1px solid var(--cell-dirt); */
+  background-color: var(--cell-number-revealed-background);
+  
+  color: var(--cell-number-revealed-text);
+  border-top: none;
+  border-left: none;
+  border-right: var(--cell-all-borders);
+  border-bottom: var(--cell-all-borders);
 }
 
 #orientation-warning {

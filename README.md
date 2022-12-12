@@ -14,7 +14,7 @@ Application is live [at this url](https://mobile-mines.netlify.app), and updates
 - [ ] Build game start behavior
 	- [x] populate board
 	- [x] basic behaviors based on rules
-	- [ ] 'flag' behavior
+	- [x] 'flag' behavior
 	- [ ] timer
 	- [ ] pause
 	- [ ] end

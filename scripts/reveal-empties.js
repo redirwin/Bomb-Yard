@@ -1,14 +1,10 @@
-import { revealNumbersAdjacentEmpties } from "./reveal-numbers-adjacent-empties.js"
 import { updateBoard } from "./update-board.js"
-
 
 export function revealEmpties(gridArray, clickedCellId, gridDefinition) {
 
     const columnCount = gridDefinition.columnCount;
  
     const collectAll = []
-
-    const justTheAdjacentNumbers = []
 
     const unrevealedEmptyNeighbors = [              
         gridArray[clickedCellId - 1], // start with the clicked cell
@@ -18,7 +14,6 @@ export function revealEmpties(gridArray, clickedCellId, gridDefinition) {
     while(unrevealedEmptyNeighbors.length) { 
         unrevealedEmptyNeighbors.forEach((cell) => {
             cell.state = "revealed"
-            // document.getElementById(cell.uid).classList.add("revealed")
             collectAll.push(cell)            
         })
         unrevealedEmptyNeighbors.length = 0
@@ -28,10 +23,6 @@ export function revealEmpties(gridArray, clickedCellId, gridDefinition) {
             } 
         })
     }
-
-    // updateBoard(gridArray, collectAll)
-
-    // console.log("after revealing empties: ", gridArray)
 
     updateBoard(gridArray, "empty cell click")
  
@@ -93,11 +84,9 @@ export function revealEmpties(gridArray, clickedCellId, gridDefinition) {
         // helper function to check if cell is empty and not revealed
         function isEmptyAndNotRevealed(cell) {
             
-            // cell.type === "number" && justTheAdjacentNumbers.push(cell)
-
             if (cell.type === "number" ) {
                 cell.verifiedAdjacentEmpty = true
-                justTheAdjacentNumbers.push(cell)
+                cell.state = "revealed"
             }
             
             if (cell.type !== "number"){
@@ -109,8 +98,6 @@ export function revealEmpties(gridArray, clickedCellId, gridDefinition) {
         return unrevealedEmptyNeighbors;
 
     }
-
-    // revealNumbersAdjacentEmpties([...new Set(justTheAdjacentNumbers)], gridArray)    
 
 }
 
