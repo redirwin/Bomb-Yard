@@ -1,22 +1,22 @@
 export function timer(reason, startTime) {
 
-let timer = document.querySelector("#timer");
-let time = startTime;
-timer.innerHTML = time;
+// let timer = document.querySelector("#timer");
+// let time = startTime;
+// timer.innerHTML = time;
 
-setTimeout(() => {
+// setTimeout(() => {
 
-    timer++
+//     timer++
 
-}, 1000);
-
-
+// }, 1000);
 
 
 
-if(reason === "game over") {
 
-}
+
+// if(reason === "game over") {
+
+// }
 
 
 

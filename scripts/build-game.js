@@ -35,12 +35,7 @@ export function buildGame(gridArray, cellSize, gridDefinition) {
     });
   });
 
-  timer("game start", 0), { once: true };
-
-
-  
-
-
+//   timer("new game", 0);
 
 
 
