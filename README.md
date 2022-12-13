@@ -34,5 +34,5 @@ Application is live [at this url](https://bomb-yard.netlify.app/), and also upda
 	- [ ] user accounts
 - [ ] Clean up UI layout & styling
 - [ ] Add additional written content
-- [ ] How to play
-- [ ] About
+	- [ ] How to play
+	- [ ] About
