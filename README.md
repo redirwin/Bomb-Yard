@@ -4,7 +4,7 @@ A browser-based Minesweeper-like game for playing specifically on mobile devices
 
 This app is currently in development, and this readme will be updated as commits are made.
 
-Application is live [at this url](https://bomb-yard.netlify.app/)), and updates as app is being developed.
+Application is live [at this url](https://bomb-yard.netlify.app/), and also updates as commits are made.
 
 ## To Do
 
