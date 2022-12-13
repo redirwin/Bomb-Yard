@@ -1,10 +1,10 @@
-# Mobile Mines
+# Bomb Yard
 
-A browser-based Minesweeper-like game that is geared specifically toward mobile devices, although it can also be played on larger screens.
+A browser-based Minesweeper-like game for playing specifically on mobile devices.
 
-This app is currently in development, and this readme will be updated when an MVP has been reached.
+This app is currently in development, and this readme will be updated as commits are made.
 
-Application is live [at this url](https://mobile-mines.netlify.app), and updates as app is being developed.
+Application is live [at this url](https://bomb-yard.netlify.app/), and also updates as commits are made.
 
 ## To Do
 
@@ -15,7 +15,7 @@ Application is live [at this url](https://mobile-mines.netlify.app), and updates
 	- [x] populate board
 	- [x] basic behaviors based on rules
 	- [x] 'flag' behavior
-	- [ ] timer
+	- [x] timer
 	- [ ] pause
 	- [ ] end
 	- [ ] undo
@@ -34,7 +34,6 @@ Application is live [at this url](https://mobile-mines.netlify.app), and updates
 	- [ ] user accounts
 - [ ] Clean up UI layout & styling
 - [ ] Add additional written content
-- [ ] How to play
-- [ ] About
-- [ ] Feature request
-- [ ] Support the app
+	- [ ] Welcome/start page
+	- [ ] How to play
+	- [ ] About
