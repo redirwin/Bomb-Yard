@@ -1,4 +1,4 @@
-# Mobile Mines
+# Bomb Yard
 
 A browser-based Minesweeper-like game that is geared specifically toward mobile devices, although it can also be played on larger screens.
 
