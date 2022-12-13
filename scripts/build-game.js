@@ -32,6 +32,12 @@ export function buildGame(gridArray, cellSize, gridDefinition) {
       event.preventDefault();
       handleCellClicks(event, gridArray, gridDefinition);
     });
+
+    cell.addEventListener('long-press', function(event) {
+      event.preventDefault();
+      handleCellClicks(event, gridArray, gridDefinition);
+    });
+
   });
 
 //   timer("new game", 0);

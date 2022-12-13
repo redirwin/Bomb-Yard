@@ -17,5 +17,7 @@
     "url": "https://github.com/redirwin/Mobile-Mines/issues"
   },
   "homepage": "https://github.com/redirwin/Mobile-Mines#readme",
-  "dependencies": {}
+  "dependencies": {
+    "long-press-event": "^2.4.4"
+  }
 }
