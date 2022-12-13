@@ -68,6 +68,13 @@ body,
   max-width: 768px;
 }
 
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 select, button {
   /* appearance: none; */
   background-color: transparent;
@@ -79,12 +86,6 @@ select, button {
   font-size: inherit;
   cursor: inherit;
   line-height: inherit;
-}
-
-#menu-button,
-select,
-button {
-  cursor: pointer;
 }
 
 #marquee,
@@ -257,11 +258,19 @@ footer {
 }
 
 
-/* FOOTER */ /* CONTEXT OPTIONS MENU ITEMS */
+/* FOOTER */ /* CONTEXT OPTIONS */
 
 footer {
   bottom: 0;
   left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .flex-container {
+  max-width: 500px;
+  min-width: 255px;
 }
 
 .context-options {
@@ -285,43 +294,45 @@ footer {
   text-align: center;
   font-weight: 400;
   border-right: 1px solid var(--cell-background);
+  width: 33.33%;
+  min-width: 55px;
 }
 
-.context-options > * :last-child {
-  border-right: none;
+.context-options:first-child {
+  border-left: 1px solid var(--cell-background);;
 }
 
 .context-options div, 
 .context-options select, 
 #new-game-button {
-  width: 33.33%;
+  width: 100%;
   min-width: 55px;
 }
 
-ul#difficulty {
-  list-style-type: none;
-  padding: 0;
+footer select {
+  font-family: fontAwesome;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
   margin: 0;
-}
-
-#difficulty li {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-}
-
-#undo, #check-board, #end-game, #pause-game {
-  width: 25%;
-  min-width: 55px;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
 }
 
 .context-options i {
   font-size: 1.75rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-
-/*  End Context Options Menu */
+/*  End Context Options */
 
 
 @media only screen and (max-width: 360px) {

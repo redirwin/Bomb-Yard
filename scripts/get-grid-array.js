@@ -1,4 +1,4 @@
-export function buildGridArray(gridDefinition, gridArray) {
+export function getGridArray(gridDefinition, gridArray) {
     // clear gridArray
     gridArray.length = 0;
 

@@ -44,20 +44,17 @@ export function buildGame(gridArray, cellSize, gridDefinition) {
   });
 
   contextOptions.innerHTML = `
-  <div id="pause-game"><i class="fa fa-pause" aria-hidden="true"></i></div>
-    <div id="undo"><i class="fas fa-undo"></i></div>
-    <div id="check-board"><i class="fa fa-check" aria-hidden="true"></i><br></div>
-    <div id="end-game"><i class="fa-solid fa-stop"></i></div>
+    <div><i class="fas fa-undo" id="undo"></i></div>
+    <div><i class="fa fa-pause" id="pause-game"></i></div>
+    <div><i class="fa-solid fa-stop" id="end-game"></i></div>
   `
 
   contextOptions.addEventListener("click", function (event) {
 
+    // console.log(event.target)
+
     if (event.target.id === "undo") {
       console.log("undo");
-    }
-
-    if (event.target.id === "check-board") {
-      console.log("check board");
     }
 
     if (event.target.id === "end-game") {

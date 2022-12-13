@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="../node_modules/long-press-event/dist/long-press-event.min.js"></script>
     <script src="./scripts/app.js" type="module" defer></script>
-    <!-- <link href="./styles/hamburgers.css" rel="stylesheet"> -->
+    <link href="./styles/dropdown-select.css" rel="stylesheet">
     <link href="./styles/main.css" rel="stylesheet">
     <title>Bomb Yard Minesweeper Clone</title>
 </head>
@@ -33,53 +33,23 @@
     </section>
     </div>
     <footer>
-
+        <div class="flex-container">
             <div class="context-options" id="context-options">
-
-                <div id="menu-button">
-                    <i class="fa fa-bars" aria-hidden="true"></i>
-
+                <div class="select">
+                    <div class="selectBtn first" data-type="firstOption">Easier</div>
+                    <div class="selectDropdown">
+                        <div class="option third" data-type="thirdOption">Expert</div>
+                        <div class="option second" data-type="secondOption">Moderate</div>
+                        <div class="option first" data-type="firstOption">Easier</div>
+                    </div>
                 </div>
-                <!-- <div id="menu">
-                    <div class="menu-item"><a href="#">About</a></div>
-                    <div class="menu-item"><a href="#">Leaderboard & Stats</a></div>
-                    <div class="menu-item"><a href="#">How to Play</a></div>
-                    <div class="menu-item"><a href="#">Settings</a></div>
-                </div> -->
-
-                <select name="difficulty" id="difficulty" aria-label="difficulty selection">
-                    <option value="easier">Easier</option>
-                    <option value="intermediate">Intermediate</option>
-                    <option value="expert">Expert</option>
-                </select>
-
-                <div id="new-game-button"><i class="fa-solid fa-play"></i></div>
-
+                <div><i class="fa-solid fa-play" id="new-game-button"></i></div>
             </div>
-      
-
+        </div>
     </footer>
-    <div id="orientation-warning">
-        <p>
-            Please rotate your device<br>90 degrees.
-        </p>
-    </div>
-
-    <div id="grid-cover">
-    </div>
-
-    <div class="in-game-message">
-
-    </div>
-
-<!-- <script>
-  const gameGrid = document.querySelector("#game-grid");
-    console.log(gameGrid)    
-    
-    gameGrid.addEventListener("click", () => {console.log("clicked")}, { once: true });    
-    gameGrid.addEventListener("contextmenu", () => {console.log("right-clicked")}, { once: true });
-
-</script> -->
+    <div id="orientation-warning"><p>Please rotate your device<br>90 degrees.</p></div>
+    <div id="grid-cover"></div>
+    <div class="in-game-message"></div>
 
 </body>
 

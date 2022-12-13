@@ -1,8 +1,8 @@
-export function placeMines(gridArray, difficulty) {
+export function placeMines(gridArray, difficultyLevel, cellPixelSize) {
 
   const mineCounter = document.querySelector("#mine-counter");
 
-  let mineCount = Math.floor(gridArray.length * difficulty);
+  let mineCount = Math.floor(gridArray.length * difficultyLevel);
 
   mineCounter.innerHTML = mineCount;
 
