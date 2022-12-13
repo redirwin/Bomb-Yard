@@ -32,18 +32,7 @@ export function handleCellClicks(event, gridArray, gridDefinition) {
         }
     }
 
-    if (event.type === "contextmenu") {
-        event.target.classList.toggle("flagged")
-        gridArray[clickedCellId - 1].flagged = !gridArray[clickedCellId - 1].flagged
-
-        if (flagCounter === mineCounter - 1) {
-            console.log("flags equal mines")
-            // revealMines(gridArray, clickedCellId)
-        }
-    } 
-
-
-    if (event.type === "long-press") {
+    if (event.type === "contextmenu" || event.type === "long-press") {
         event.target.classList.toggle("flagged")
         gridArray[clickedCellId - 1].flagged = !gridArray[clickedCellId - 1].flagged
 

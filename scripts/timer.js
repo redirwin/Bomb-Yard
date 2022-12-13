@@ -9,7 +9,7 @@ export function timer(action) {
     gameTimer = setInterval(function () {
       time++;
       document.querySelector("#timer").textContent = time;
-      console.log(time);
+      // console.log(time);
     }, 1000);
   }
 
