@@ -16,7 +16,7 @@ Application is live [at this url](https://bomb-yard.netlify.app/), and also upda
 	- [x] basic behaviors based on rules
 	- [x] 'flag' behavior
 	- [x] timer
-	- [ ] long-press event listner for flagging
+	- [x] long-press event listner for flagging
 	- [ ] pause
 	- [ ] end
 	- [ ] undo

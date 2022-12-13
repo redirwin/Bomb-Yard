@@ -44,7 +44,6 @@ export function handleCellClicks(event, gridArray, gridDefinition) {
 
 
     if (event.type === "long-press") {
-        document.querySelector("h1").textContent = "long press"
         event.target.classList.toggle("flagged")
         gridArray[clickedCellId - 1].flagged = !gridArray[clickedCellId - 1].flagged
 
