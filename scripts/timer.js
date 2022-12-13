@@ -1,24 +1,23 @@
-export function timer(reason, startTime) {
+let gameTimer;
 
-// let timer = document.querySelector("#timer");
-// let time = startTime;
-// timer.innerHTML = time;
+export function timer(action) {
 
-// setTimeout(() => {
-
-//     timer++
-
-// }, 1000);
-
-
-
-
-
-// if(reason === "game over") {
-
-// }
+  if (action === "new-game") {
+    document.querySelector("#timer").textContent = 0;
+    clearInterval(gameTimer);
+    let time = 0;
+    gameTimer = setInterval(function () {
+      time++;
+      document.querySelector("#timer").textContent = time;
+      console.log(time);
+    }, 1000);
+  }
 
 
 
+  if (action === "game-over") {
+    clearInterval(gameTimer);
+    console.log("Final Time: " + document.querySelector("#timer").textContent);
+  }
 
 }

@@ -1,5 +1,4 @@
 import { handleCellClicks } from "./handle-cell-clicks.js";
-import { timer } from "./timer.js";
 
 export function buildGame(gridArray, cellSize, gridDefinition) {
   const gameGrid = document.querySelector("#game-grid");

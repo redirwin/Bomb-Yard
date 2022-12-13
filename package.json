@@ -1,0 +1,21 @@
+{
+  "name": "Mobile-Mines",
+  "version": "1.0.0",
+  "description": "A browser-based Minesweeper-like game that is geared specifically toward mobile devices, although it can also be played on larger screens.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redirwin/Mobile-Mines.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/redirwin/Mobile-Mines/issues"
+  },
+  "homepage": "https://github.com/redirwin/Mobile-Mines#readme",
+  "dependencies": {}
+}

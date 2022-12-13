@@ -14,6 +14,6 @@ export function revealMines(gridArray, clickedCellId) {
     })
 
     updateBoard(gridArray, "mine click")
-    // gameOver()
+    gameOver()
 
 }

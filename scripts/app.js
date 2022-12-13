@@ -32,11 +32,17 @@ const newGameBtn = document.querySelector("#new-game-button");
 const gridDefinition = gameBoardSizes(userSettings.cellPixelSize);
 const gridArray = []
 const gameBoard = document.querySelector("#game-grid");
+const flagCounter = document.querySelector("#flag-counter");
+let gameTimer;
+
 
 newGameBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  flagCounter.textContent = 0;
+  timer("new-game", 0, newGameBtn); 
 
-event.preventDefault();
-
+  // document.querySelector("footer").style = "display: none";
+  
   gameBoard.innerHTML = `
     <div class="loading">
       <p>Rendering Game</p>
@@ -54,6 +60,7 @@ event.preventDefault();
     placeEmpties(gridArray);
 
     buildGame(gridArray, userSettings.cellPixelSize, gridDefinition);
+
   }, 0);
 });
 

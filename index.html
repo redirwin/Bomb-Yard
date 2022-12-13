@@ -13,17 +13,18 @@
     <script src="./scripts/app.js" type="module" defer></script>
     <link href="./styles/hamburgers.css" rel="stylesheet">
     <link href="./styles/main.css" rel="stylesheet">
-    <title>Mobile Mines</title>
+    <title>Bomb Yard Minesweeper Clone</title>
 </head>
 
 <body>
 
     <section id="marquee">
         <div id="marquee-container">
-            <h1>Mobile Mines</h1>
+            <h1>Bomb<br>Yard💣</h1>
             <div id="top-stats">
-                <div id="mine-count"><span>MINES</span><span id="mine-counter">0</span></div>
-                <div id="timer-container"><span>TIME</span><span id="timer">0</span></div>
+                <div class="stats" id="mine-count"><span>MINES</span><span id="mine-counter">0</span></div>
+                <div class="stats" id="flag-count"><span>MARKS</span><span id="flag-counter">0</span></div>
+                <div class="stats" id="timer-container"><span>TIME</span><span id="timer">0</span></div>
             </div>
         </div>
     </section>
@@ -41,20 +42,23 @@
             </div> -->
             <div id="menu">
                 <div class="menu-item"><a href="#">About</a></div>
-                <div class="menu-item"><a href="#">Support the App</a></div>
+                <!-- <div class="menu-item"><a href="#">Support the App</a></div> -->
                 <div class="menu-item"><a href="#">Leaderboard & Stats</a></div>
                 <div class="menu-item"><a href="#">How to Play</a></div>
                 <div class="menu-item"><a href="#">Settings</a></div>
             </div>
-            <form id="difficulty-form">
+            <!-- <button class="pause">Pause</button> -->
+            <form id="difficulty-form" >
                 <select name="difficulty" id="difficulty" aria-label="difficulty selection">
                     <option value="easier">Easier</option>
                     <option value="intermediate">Intermediate</option>
                     <option value="expert">Expert</option>
                 </select>
-                <button id="new-game-button">New<br>Game</button>
+                <button id="new-game-button">New Game</button>
             </form>
         </div>
+      
+
     </footer>
     <div id="orientation-warning">
         <p>
