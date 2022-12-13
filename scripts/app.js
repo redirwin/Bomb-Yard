@@ -54,7 +54,6 @@ newGameBtn.addEventListener("click", function (event) {
     difficulty();
     buildGridArray(gridDefinition, gridArray)
 
-
     placeMines(gridArray, difficulty());
     placeNumbers(gridArray, gridDefinition);
     placeEmpties(gridArray);
@@ -62,6 +61,7 @@ newGameBtn.addEventListener("click", function (event) {
     buildGame(gridArray, userSettings.cellPixelSize, gridDefinition);
 
   }, 0);
+
 });
 
 // End New Game Button ---------------------------

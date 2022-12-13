@@ -1,9 +1,9 @@
 import { revealEmpties } from "./reveal-empties.js"
 import { revealMines } from "./reveal-mines.js"
 import { revealClickedNumber } from "./reveal-clicked-number.js"
-// import { timer } from "./timer.js"
 import { gameOver } from "./game-over.js"
-import { userRequestsClearBoard } from "./user-requests-clear-board.js"
+import { outOfFlagsMessage } from "./out-of-flags.message.js"
+import { timer } from "./timer.js"
 
 
 export function handleCellClicks(event, gridArray, gridDefinition) {   
@@ -38,14 +38,10 @@ export function handleCellClicks(event, gridArray, gridDefinition) {
 
         if (flagCounter === mineCounter - 1) {
             console.log("flags equal mines")
-            // revealMines(gridArray, clickedCellId)
+            // timer("pause")
+            // outOfFlagsMessage(flagCounter + 1, mineCounter)
         }
     } 
-
-
-
-
-
 
 
           
