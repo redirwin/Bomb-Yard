@@ -190,8 +190,8 @@ footer {
 
 .cell.flagged {
   background: url(../assets/cone.png) no-repeat center center;
-  background-size: 60%;
-  border: none;
+  background-size: 55%;
+  /* border: none; */
   transition: background-color 0.25s ease;
 }
 
@@ -226,7 +226,6 @@ footer {
   padding: 50px;
   z-index: 9999;
   background-color: rgba(51, 51, 51, 0.9);
-  display: flex;
   display: none;
 }
 
@@ -258,7 +257,7 @@ footer {
 }
 
 
-/* FOOTER */ /* CONTEXT OPTIONS */
+/* FOOTER */ 
 
 footer {
   bottom: 0;
@@ -266,73 +265,132 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 10vh;
+  min-height: 70px;
+  padding: 0;
 }
 
 footer .flex-container {
+  width: 100%;
+  height: 10vh;
   max-width: 500px;
   min-width: 255px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.context-options {
+footer .flex-container:hover {
+  cursor: pointer;
+}
+
+/* FOOTER ----------------- DEFAULT OPTIONS */
+
+.select-level,
+.new-game-button {
+  height: 100%;
+  width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  /* display: none; */
+}
+
+.new-game-button {
+  border-right: 1px solid #f4f4f4;
+
+}
+
+.level {
+  height: 100%;
+  display: flex;
+  width: 100%;
+  min-width: 75px;
+  padding: .5rem 0;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  width: 100%;
-  min-width: 220px;
-  height: 70px;
+  font-size: 1.25rem;
+  transition: all 0.25s;
+  border-right: 1px solid #f4f4f4;
 }
 
-.context-options > * {
-  border-right: 1px solid var(--aside-background);
-  color: var(--aside-text);
-  background: var(--aside-background);
-  cursor:pointer;
+.level.one {
+  border-left: 1px solid #f4f4f4;
+}
+
+.level i {
+  margin-top: .25rem;
+}
+
+.level:hover, 
+.level:focus, 
+.level:active, 
+.level.selected,
+.new-game-button:hover,
+.new-game-button:focus,
+.new-game-button:active {
+  background: #f4f4f4;
+  color: #000;
+  /* border-right: 1px solid #000; */
+}
+
+/* FOOTER --------------------- IN GAME OPTIONS */
+
+.in-game-options-container {
+  width: 80%;
   height: 100%;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
-  font-weight: 400;
-  border-right: 1px solid var(--cell-background);
-  width: 33.33%;
-  min-width: 55px;
 }
 
-.context-options:first-child {
-  border-left: 1px solid var(--cell-background);;
-}
-
-.context-options div, 
-.context-options select, 
-#new-game-button {
+.in-game-option {
+  height: 100%;
   width: 100%;
-  min-width: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: .75rem;
+  font-size: 1.5rem;
+  border-left: 1px solid #f4f4f4;
+  transition: all 0.25s;
 }
 
-footer select {
-  font-family: fontAwesome;
-  appearance: none;
-  background-color: transparent;
-  border: none;
-  padding: 0 1em 0 0;
-  margin: 0;
-  width: 100%;
-  font-family: inherit;
-  font-size: inherit;
-  cursor: inherit;
-  line-height: inherit;
+.in-game-option:last-of-type {
+  border-right: 1px solid #f4f4f4;
+  border-left: none;
 }
 
-.context-options i {
+.in-game-option:nth-of-type(3) {
+  border-right: 1px solid #f4f4f4;
+}
+
+.in-game-option:hover,
+.in-game-option:focus,
+.in-game-option:active {
+  background: #f4f4f4;
+  color: #000;
+  /* border-right: 1px solid #000; */
+}
+
+.in-game-option i {
   font-size: 1.75rem;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-/*  End Context Options */
+.in-game-option span {
+  font-size: .8rem;
+  margin-top: .5rem;
+}
+
+#play-pause {
+  display: flex;
+}
+
+
 
 
 @media only screen and (max-width: 360px) {
@@ -346,6 +404,7 @@ footer select {
 
 
 @media only screen and (min-width: 360px) {
+
   #marquee h1 {
     font-size: 1.75rem;
     line-height: 1em;
@@ -354,7 +413,16 @@ footer select {
   max-width: 200px;
   display: flex;
   justify-content: space-between;
+  }
+
 }
+
+@media only screen and (max-width: 450px) {
+
+  .in-game-options-container {
+    width: 100%;
+  }
+
 }
 
 
@@ -378,4 +446,11 @@ footer select {
     width: 50%;
     text-align: center;
   }
+}
+
+
+/* HELPERS */
+
+.hide {
+  display: none;
 }

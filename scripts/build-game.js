@@ -1,4 +1,5 @@
 import { handleCellClicks } from "./handle-cell-clicks.js";
+// import { buildContextOptions } from "./build-context-options.js";
 
 const gameGrid = document.querySelector("#game-grid");
 const gridCover = document.querySelector("#grid-cover");
@@ -43,29 +44,25 @@ export function buildGame(gridArray, cellSize, gridDefinition) {
 
   });
 
-  contextOptions.innerHTML = `
-    <div><i class="fas fa-undo" id="undo"></i></div>
-    <div><i class="fa fa-pause" id="pause-game"></i></div>
-    <div><i class="fa-solid fa-stop" id="end-game"></i></div>
-  `
+  // buildContextOptions("in-game")
 
-  contextOptions.addEventListener("click", function (event) {
+  // contextOptions.addEventListener("click", function (event) {
 
-    // console.log(event.target)
+  //   // console.log(event.target)
 
-    if (event.target.id === "undo") {
-      console.log("undo");
-    }
+  //   if (event.target.id === "undo") {
+  //     console.log("undo");
+  //   }
 
-    if (event.target.id === "end-game") {
-      console.log("end game");
-    }
+  //   if (event.target.id === "end-game") {
+  //     console.log("end game");
+  //   }
 
-    if (event.target.id === "pause-game") {
-      console.log("pause game");
-    }
+  //   if (event.target.id === "pause-game") {
+  //     console.log("pause game");
+  //   }
 
-  })
+  // })
 
   // HANDLE STARTING GAME CLICK ---------------------------
 

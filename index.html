@@ -34,17 +34,48 @@
     </div>
     <footer>
         <div class="flex-container">
-            <div class="context-options" id="context-options">
-                <div class="select">
-                    <div class="selectBtn first" data-type="firstOption">Easier</div>
-                    <div class="selectDropdown">
-                        <div class="option third" data-type="thirdOption">Expert</div>
-                        <div class="option second" data-type="secondOption">Moderate</div>
-                        <div class="option first" data-type="firstOption">Easier</div>
-                    </div>
+
+            <div class="select-level">
+                <div class="level one selected" data-level="1">
+                    <i class="fa-solid fa-land-mine-on"></i>
                 </div>
-                <div><i class="fa-solid fa-play" id="new-game-button"></i></div>
+                <div class="level two" data-level="2">
+                    <i class="fa-solid fa-land-mine-on"></i>
+                    <i class="fa-solid fa-land-mine-on"></i>
+                </div>
+                <div class="level three" data-level="3">
+                    <i class="fa-solid fa-land-mine-on"></i>
+                    <i class="fa-solid fa-land-mine-on"></i>
+                    <i class="fa-solid fa-land-mine-on"></i>
+                </div>
             </div>
+            
+            <div class="new-game-button"><i class="fa-solid fa-play"></i></div>
+
+
+            <div class="in-game-options-container hide">
+                <div class="in-game-option in-game-first" id="exit">
+                    <i class="fa-solid fa-times in-game-first"></i>
+                    <span class="in-game-first">EXIT</span>
+                </div>
+                <div class="in-game-option in-game-second" id="play-pause">
+                    <span class="in-game-second">
+                        <i class="fa-solid fa-play in-game-second"></i>
+                        <i class="fa-solid fa-pause in-game-second"></i>
+                    </span>
+                    <span class="in-game-second">PAUSE</span>
+                    <span class="in-game-second hide">PLAY</span>
+                </div>
+                <div class="in-game-option in-game-third" id="restart-game">
+                    <i class="fa-solid fa-redo in-game-third"></i>
+                    <span class="in-game-third">RESTART</span>
+                </div>
+                <div class="in-game-new-game-button in-game-option in-game-fourth hide" id="new-game">
+                    <i class="fa-solid fa-play in-game-fourth"></i>
+                    <span class="in-game-fourth">NEW</span>
+                </div>
+            </div>
+
         </div>
     </footer>
     <div id="orientation-warning"><p>Please rotate your device<br>90 degrees.</p></div>

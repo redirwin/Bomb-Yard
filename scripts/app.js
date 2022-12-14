@@ -7,35 +7,40 @@ import { buildGame } from "./build-game.js";
 import { placeMines } from "./place-mines.js";
 import { placeNumbers } from "./place-numbers.js";
 import { placeEmpties } from "./place-empties.js";
-import { timer } from "./timer.js";
 import { buildDropDownSelector } from "./build-drop-down-selector.js";
+// import { buildContextOptions } from "./build-context-options.js";
+import { timer } from "./timer.js";
+import { handleInGameOptions } from "./handle-in-game-options.js";
 
-const newGameBtn = document.querySelector("#new-game-button");
+const newGameBtn = document.querySelector(".new-game-button");
 const gridArray = [];
 const cellPixelSize = getCellPixelSize();
 const gridDefinition = getGameBoardSizes(cellPixelSize);
-const gameBoard = document.querySelector("#game-grid");
 const flagCounter = document.querySelector("#flag-counter");
-const difficultyOptions = document.querySelectorAll(`.option`);
+// const difficultyOptions = document.querySelectorAll(`.option`);
 let difficultySelection = "1";
 
 // UI COMPONENTS ---------------------------
-buildDropDownSelector();
+
+window.addEventListener('load', (event) => {
+  buildDropDownSelector();
+  getDifficultyLevel()
+  // levelSettings();
+  // buildContextOptions("default");
+  newGame();
+});
+
+
 
 // NEW GAME BUTTON ---------------------------
 
-newGameBtn.addEventListener("click", function (event) {
-  event.preventDefault();
-  flagCounter.textContent = 0;
-  timer("new-game", 0, newGameBtn);
+export function newGame() {
+  newGameBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    
+    flagCounter.textContent = 0;
+    timer("new-game", 0, newGameBtn);
 
-  gameBoard.innerHTML = `
-    <div class="loading">
-      <p>Rendering Game</p>
-      <img src="/assets/loading.svg" alt="rendering game">
-    </div>
-    `;
-  setTimeout(() => {
     gridArray.length = 0;
     getGridArray(gridDefinition, gridArray);
     placeMines(
@@ -47,8 +52,12 @@ newGameBtn.addEventListener("click", function (event) {
     placeEmpties(gridArray);
 
     buildGame(gridArray, getCellPixelSize(), gridDefinition);
-  }, 0);
-});
+
+    handleInGameOptions(event);
+
+  });
+
+}
 
 // HANDLE CELL CLICKS ---------------------------
 
@@ -61,14 +70,14 @@ cells.forEach((cell) => {
   });
 });
 
-// DIFFICULTY LEVEL DROPDOWN EVENT LISTNER  ---------------------------
 
-difficultyOptions.forEach((option) => {
-  option.addEventListener(`click`, () => {
-    option.classList.contains("first") && (difficultySelection = "1");
-    option.classList.contains("second") && (difficultySelection = "2");
-    option.classList.contains("third") && (difficultySelection = "3");
+// IN GAME OPTIONS MENU ---------------------------
+
+const inGameOptions = document.querySelectorAll(".in-game-option");
+
+inGameOptions.forEach((option) => {
+  option.addEventListener("click", function (event) {
+    event.preventDefault();
+    handleInGameOptions(event);
   });
 });
-
-// End Difficulty Level Dropdown Event Listener ---------------------------

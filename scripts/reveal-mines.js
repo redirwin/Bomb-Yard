@@ -1,4 +1,4 @@
-import { gameOver } from "./game-over.js"
+import { gameOverSequence } from "./game-over-sequence.js"
 import { updateBoard } from "./update-board.js"
 
 export function revealMines(gridArray, clickedCellId) {
@@ -14,6 +14,6 @@ export function revealMines(gridArray, clickedCellId) {
     })
 
     updateBoard(gridArray, "mine click")
-    gameOver()
+    gameOverSequence()
 
 }

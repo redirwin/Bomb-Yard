@@ -1,10 +1,7 @@
 import { revealEmpties } from "./reveal-empties.js"
 import { revealMines } from "./reveal-mines.js"
 import { revealClickedNumber } from "./reveal-clicked-number.js"
-import { gameOver } from "./game-over.js"
-import { outOfFlagsMessage } from "./out-of-flags.message.js"
-import { timer } from "./timer.js"
-
+import { gameOverSequence } from "./game-over-sequence.js"
 
 export function handleCellClicks(event, gridArray, gridDefinition) {   
 
@@ -27,7 +24,7 @@ export function handleCellClicks(event, gridArray, gridDefinition) {
     
         if(gridArray[clickedCellId - 1].type === "mine") {
             revealMines(gridArray, clickedCellId)
-            gameOver()
+            gameOverSequence()
             return
         }
     }
@@ -35,12 +32,6 @@ export function handleCellClicks(event, gridArray, gridDefinition) {
     if (event.type === "contextmenu" || event.type === "long-press") {
         event.target.classList.toggle("flagged")
         gridArray[clickedCellId - 1].flagged = !gridArray[clickedCellId - 1].flagged
-
-        if (flagCounter === mineCounter - 1) {
-            console.log("flags equal mines")
-            // timer("pause")
-            // outOfFlagsMessage(flagCounter + 1, mineCounter)
-        }
     } 
 
 

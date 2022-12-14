@@ -1,6 +1,7 @@
 import { timer } from "./timer.js";
+// import { buildContextOptions } from "./build-context-options.js";
 
-export function gameOver() {
+export function gameOverSequence() {
    
     console.log("GAME OVER!")
     const gridCover = document.querySelector("#grid-cover");
@@ -8,5 +9,6 @@ export function gameOver() {
     gridCover.style.display = "block";
 
     timer("game-over")
+    // buildContextOptions("game-over")
 
 }
